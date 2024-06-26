@@ -1,23 +1,58 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import MainRoutes from './MainRoutes'
+import AuthRoutes from './AuthRoutes'
+import { useAuthStore } from '@/stores/auth'
+import { useUIStore } from '@/stores/ui'
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: '/:pathMatch(.*)*',
+      component: () => import('@/views/pages/maintenance/error/Error404Page.vue')
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
+    MainRoutes,
+    AuthRoutes
   ]
 })
 
-export default router
+interface User {
+  // Define the properties and their types for the user data here
+  // For example:
+  id: number
+  name: string
+}
+
+// Assuming you have a type/interface for your authentication store
+interface AuthStore {
+  user: User | null
+  returnUrl: string | null
+  login(username: string, password: string): Promise<void>
+  logout(): void
+}
+
+router.beforeEach(async (to, from, next) => {
+  // redirect to login page if not logged in and trying to access a restricted page
+  const publicPages = ['/auth/login']
+  const authRequired = !publicPages.includes(to.path)
+  const auth: AuthStore = useAuthStore()
+
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (authRequired && !auth.user) {
+      auth.returnUrl = to.fullPath
+      return next('/auth/login')
+    } else next()
+  } else {
+    next()
+  }
+})
+
+router.beforeEach(() => {
+  const uiStore = useUIStore()
+  uiStore.isLoading = true
+})
+
+router.afterEach(() => {
+  const uiStore = useUIStore()
+  uiStore.isLoading = false
+})

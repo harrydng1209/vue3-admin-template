@@ -32,7 +32,7 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# Env files
+# Dotenv files
 .env
 .env.*
 !.env.example

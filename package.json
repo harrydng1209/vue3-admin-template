@@ -1,6 +1,6 @@
 {
   "name": "vue3-admin-template",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "author": "Harry <harrydng1209@gmail.com>",
@@ -21,9 +21,20 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@fontsource/public-sans": "^5.0.18",
+    "@mdi/font": "^7.4.47",
+    "ant-design-vue": "^4.2.3",
     "pinia": "^2.1.7",
+    "vee-validate": "^4.13.1",
+    "vite-plugin-vuetify": "^2.0.3",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.3.3",
+    "vue-tabler-icons": "^2.21.0",
+    "vue3-apexcharts": "^1.5.3",
+    "vue3-perfect-scrollbar": "^2.0.0",
+    "vuetify": "^3.6.10"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
@@ -42,6 +53,7 @@
     "jsdom": "^24.1.0",
     "npm-run-all2": "^6.2.0",
     "prettier": "^3.2.5",
+    "sass": "^1.77.6",
     "start-server-and-test": "^2.0.4",
     "typescript": "~5.4.0",
     "vite": "^5.3.1",
