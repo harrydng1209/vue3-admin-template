@@ -9,7 +9,6 @@ export const fetchWrapper = {
 
 function request(method: string) {
   return (url: string, body?: object) => {
-    /* eslint-disable @typescript-eslint/no-explicit-any */
     const requestOptions: any = {
       method,
       headers: authHeader(url)
@@ -22,13 +21,11 @@ function request(method: string) {
   }
 }
 
-// helper functions
-
 function authHeader(url: string) {
-  // return auth header with jwt if user is logged in and request is to the api url
   const { user } = useAuthStore()
   const isLoggedIn = !!user?.token
   const isApiUrl = url.startsWith(import.meta.env.VITE_API_URL)
+
   if (isLoggedIn && isApiUrl) {
     return { Authorization: `Bearer ${user.token}` }
   } else {
@@ -43,7 +40,6 @@ function handleResponse(response: any) {
     if (!response.ok) {
       const { user, logout } = useAuthStore()
       if ([401, 403].includes(response.status) && user) {
-        // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
         logout()
       }
 

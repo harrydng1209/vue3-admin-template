@@ -62,7 +62,6 @@ const chartOptions1 = computed(() => {
   }
 })
 
-// chart 1
 const lineChart1 = {
   series: [
     {
@@ -90,16 +89,16 @@ const reports = shallowRef([
 
 <template>
   <UiTitleCard title="Analytics Report" class-name="px-0 rounded-md overflow-hidden">
-    <v-list class="py-0" aria-busy="true" aria-label="Report list" border>
-      <v-list-item :value="item.name" v-for="(item, i) in reports" :key="i">
+    <VList class="py-0" aria-busy="true" aria-label="Report list" border>
+      <VListItem :value="item.name" v-for="(item, i) in reports" :key="i">
         <div class="d-inline-flex align-center justify-space-between w-100 gap-2">
           <h6 class="text-h6 mb-0">{{ item.name }}</h6>
           <h5 class="ml-auto text-h5 mb-0">{{ item.percent }}</h5>
         </div>
-      </v-list-item>
-    </v-list>
-    <v-divider></v-divider>
-    <apexchart type="line" height="340" :options="chartOptions1" :series="lineChart1.series">
-    </apexchart>
+      </VListItem>
+    </VList>
+    <VDivider></VDivider>
+    <Apexchart type="line" height="340" :options="chartOptions1" :series="lineChart1.series">
+    </Apexchart>
   </UiTitleCard>
 </template>

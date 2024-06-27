@@ -68,7 +68,6 @@ header {
   border: 1px solid rgba(var(--v-theme-borderLight), 0.8);
 }
 
-// table css
 .v-table {
   &.v-table--hover {
     > .v-table__wrapper {
@@ -87,7 +86,6 @@ header {
   }
 }
 
-// accordion page css
 .v-expansion-panel {
   border: 1px solid rgb(var(--v-theme-borderLight));
   &:not(:first-child) {

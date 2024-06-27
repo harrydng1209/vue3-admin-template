@@ -26,8 +26,8 @@ export default {
 </script>
 
 <template>
-  <v-row no-gutters class="bg-containerBg">
-    <v-col cols="12" class="d-flex align-center justify-center">
+  <VRow no-gutters class="bg-containerBg">
+    <VCol cols="12" class="d-flex align-center justify-center">
       <div class="text-center">
         <div class="ComingsoonWrapper my-6">
           <img src="@/assets/images/maintenance/coming-soon.png" alt="maintenance" class="w-100" />
@@ -35,68 +35,66 @@ export default {
         <h1 class="text-h1 mb-2 mt-sm-12">Coming Soon</h1>
         <small class="text-h6 text-lightText">Something new is on it's way</small>
         <div class="max450 align-center mt-5">
-          <v-row class="ma-0 comingsoon-timer overflow-hidden">
-            <v-col cols="3" sm="3">
-              <v-card variant="outlined" class="withbg">
-                <v-card-text class="pa-0">
-                  <v-sheet rounded="md" class="Timeblock text-h2 py-3 px-1"
+          <VRow class="ma-0 comingsoon-timer overflow-hidden">
+            <VCol cols="3" sm="3">
+              <VCard variant="outlined" class="withbg">
+                <VCardText class="pa-0">
+                  <VSheet rounded="md" class="Timeblock text-h2 py-3 px-1"
                     >{{ days % 365 }}
-                  </v-sheet>
+                  </VSheet>
                   <h6 class="pa-1 bg-gray100 text-caption mb-0">day</h6>
-                </v-card-text>
-              </v-card>
-            </v-col>
-            <v-col cols="3" sm="3">
-              <v-card variant="outlined" class="withbg">
-                <v-card-text class="pa-0">
-                  <v-sheet rounded="md" class="Timeblock text-h2 py-3 px-1">{{
-                    hours % 24
-                  }}</v-sheet>
+                </VCardText>
+              </VCard>
+            </VCol>
+            <VCol cols="3" sm="3">
+              <VCard variant="outlined" class="withbg">
+                <VCardText class="pa-0">
+                  <VSheet rounded="md" class="Timeblock text-h2 py-3 px-1">{{ hours % 24 }}</VSheet>
                   <h6 class="pa-1 bg-gray100 text-caption mb-0">hour</h6>
-                </v-card-text>
-              </v-card>
-            </v-col>
-            <v-col cols="3" sm="3">
-              <v-card variant="outlined" class="withbg">
-                <v-card-text class="pa-0">
-                  <v-sheet rounded="md" class="Timeblock text-h2 py-3 px-1">{{
+                </VCardText>
+              </VCard>
+            </VCol>
+            <VCol cols="3" sm="3">
+              <VCard variant="outlined" class="withbg">
+                <VCardText class="pa-0">
+                  <VSheet rounded="md" class="Timeblock text-h2 py-3 px-1">{{
                     minutes % 60
-                  }}</v-sheet>
+                  }}</VSheet>
                   <h6 class="pa-1 bg-gray100 text-caption mb-0">minute</h6>
-                </v-card-text>
-              </v-card>
-            </v-col>
-            <v-col cols="3" sm="3">
-              <v-card variant="outlined" class="withbg">
-                <v-card-text class="pa-0">
-                  <v-sheet rounded="md" class="Timeblock text-h2 py-3 px-1">{{
+                </VCardText>
+              </VCard>
+            </VCol>
+            <VCol cols="3" sm="3">
+              <VCard variant="outlined" class="withbg">
+                <VCardText class="pa-0">
+                  <VSheet rounded="md" class="Timeblock text-h2 py-3 px-1">{{
                     seconds % 60
-                  }}</v-sheet>
+                  }}</VSheet>
                   <h6 class="pa-1 bg-gray100 text-caption mb-0">second</h6>
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
+                </VCardText>
+              </VCard>
+            </VCol>
+          </VRow>
         </div>
-        <v-row class="ma-0">
-          <v-col cols="12" class="pt-7 pb-0">
+        <VRow class="ma-0">
+          <VCol cols="12" class="pt-7 pb-0">
             <h6 class="text-h6 text-secondary mb-3">
               Be the first to be notified when Mantis launches.
             </h6>
-          </v-col>
-          <v-col cols="12" class="d-sm-flex gap-2 align-center pt-0">
-            <v-text-field
+          </VCol>
+          <VCol cols="12" class="d-sm-flex gap-2 align-center pt-0">
+            <VTextField
               variant="outlined"
               label="Email Address"
               color="primary"
               hide-details
-            ></v-text-field>
-            <v-btn color="primary" elevation="0" class="mt-4 mt-sm-0">Notify Me</v-btn>
-          </v-col>
-        </v-row>
+            ></VTextField>
+            <VBtn color="primary" elevation="0" class="mt-4 mt-sm-0">Notify Me</VBtn>
+          </VCol>
+        </VRow>
       </div>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>
 <style lang="scss">
 .max450 {

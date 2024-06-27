@@ -19,13 +19,20 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
         varsIgnorePattern: '^_',
         argsIgnorePattern: '^_',
         caughtErrorsIgnorePattern: '^_'
+      }
+    ],
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
+      {
+        registeredComponentsOnly: false,
+        ignores: []
       }
     ]
   }

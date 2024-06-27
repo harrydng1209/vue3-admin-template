@@ -4,18 +4,17 @@ const props = defineProps({
 })
 </script>
 
-// ===============================|| Ui Parent Card||=============================== //
 <template>
-  <v-card variant="outlined" elevation="0" class="withbg">
-    <v-card-item>
+  <VCard variant="outlined" elevation="0" class="withbg">
+    <VCardItem>
       <div class="d-sm-flex align-center justify-space-between">
-        <v-card-title class="text-h6" style="line-height: 1.57">{{ props.title }}</v-card-title>
+        <VCardTitle class="text-h6" style="line-height: 1.57">{{ props.title }}</VCardTitle>
         <slot name="action"></slot>
       </div>
-    </v-card-item>
-    <v-divider></v-divider>
-    <v-card-text>
+    </VCardItem>
+    <VDivider></VDivider>
+    <VCardText>
       <slot />
-    </v-card-text>
-  </v-card>
+    </VCardText>
+  </VCard>
 </template>

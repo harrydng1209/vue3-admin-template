@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <v-row no-gutters class="overflow-hidden bg-containerBg" style="min-height: 100vh">
-    <v-col class="d-flex align-center justify-center">
+  <VRow no-gutters class="overflow-hidden bg-containerBg" style="min-height: 100vh">
+    <VCol class="d-flex align-center justify-center">
       <div class="text-center">
         <div class="CardMediaWrapper">
           <img src="@/assets/images/maintenance/Error404.png" alt="404" />
@@ -14,10 +14,10 @@
         <p class="text-h6 text-lightText">
           The page you are looking was moved, removed, <br />renamed, or might never exist!
         </p>
-        <v-btn variant="flat" color="primary" class="mt-2" to="/dashboard"> Back To Home</v-btn>
+        <VBtn variant="flat" color="primary" class="mt-2" to="/dashboard"> Back To Home</VBtn>
       </div>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>
 <style lang="scss">
 .CardMediaWrapper {

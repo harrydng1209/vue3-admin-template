@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-// icons
 import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons-vue'
 const show1 = ref(false)
 const password = ref('')
@@ -27,16 +26,17 @@ function validate() {
 <template>
   <div class="d-flex justify-space-between align-center">
     <h3 class="text-h3 text-center mb-0">Sign up</h3>
-    <router-link to="/auth/login" class="text-primary text-decoration-none"
-      >Already have an account?</router-link
+    <RouterLink to="/auth/login" class="text-primary text-decoration-none"
+      >Already have an account?</RouterLink
     >
   </div>
-  <v-form ref="Regform" lazy-validation action="/dashboards/analytical" class="mt-7 loginForm">
-    <v-row class="my-0">
-      <v-col cols="12" sm="6" class="py-0">
+
+  <VForm ref="Regform" lazy-validation action="/dashboards/analytical" class="mt-7 loginForm">
+    <VRow class="my-0">
+      <VCol cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>First Name*</v-label>
-          <v-text-field
+          <VLabel>First Name*</VLabel>
+          <VTextField
             v-model="firstname"
             :rules="firstRules"
             hide-details="auto"
@@ -45,13 +45,14 @@ function validate() {
             class="mt-2"
             color="primary"
             placeholder="John"
-          ></v-text-field>
+          ></VTextField>
         </div>
-      </v-col>
-      <v-col cols="12" sm="6" class="py-0">
+      </VCol>
+
+      <VCol cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Last Name*</v-label>
-          <v-text-field
+          <VLabel>Last Name*</VLabel>
+          <VTextField
             v-model="lastname"
             :rules="lastRules"
             hide-details="auto"
@@ -60,23 +61,25 @@ function validate() {
             class="mt-2"
             color="primary"
             placeholder="Doe"
-          ></v-text-field>
+          ></VTextField>
         </div>
-      </v-col>
-    </v-row>
+      </VCol>
+    </VRow>
+
     <div class="mb-6">
-      <v-label>Company</v-label>
-      <v-text-field
+      <VLabel>Company</VLabel>
+      <VTextField
         hide-details="auto"
         variant="outlined"
         class="mt-2"
         color="primary"
         placeholder="Demo Inc."
-      ></v-text-field>
+      ></VTextField>
     </div>
+
     <div class="mb-6">
-      <v-label>Email Address*</v-label>
-      <v-text-field
+      <VLabel>Email Address*</VLabel>
+      <VTextField
         v-model="email"
         :rules="emailRules"
         placeholder="demo@company.com"
@@ -85,11 +88,12 @@ function validate() {
         hide-details="auto"
         variant="outlined"
         color="primary"
-      ></v-text-field>
+      ></VTextField>
     </div>
+
     <div class="mb-6">
-      <v-label>Password</v-label>
-      <v-text-field
+      <VLabel>Password</VLabel>
+      <VTextField
         v-model="password"
         :rules="passwordRules"
         placeholder="*****"
@@ -101,7 +105,7 @@ function validate() {
         class="pwdInput mt-2"
       >
         <template v-slot:append>
-          <v-btn color="secondary" icon rounded variant="text">
+          <VBtn color="secondary" icon rounded variant="text">
             <EyeInvisibleOutlined
               :style="{ color: 'rgb(var(--v-theme-secondary))' }"
               v-if="show1 == false"
@@ -112,25 +116,26 @@ function validate() {
               v-if="show1 == true"
               @click="show1 = !show1"
             />
-          </v-btn>
+          </VBtn>
         </template>
-      </v-text-field>
+      </VTextField>
     </div>
 
     <div class="d-sm-inline-flex align-center mt-2 mb-7 mb-sm-0 font-weight-bold">
       <h6 class="text-caption">
         By Signing up, you agree to our
-        <router-link to="/auth/register" class="text-primary link-hover font-weight-medium"
+        <RouterLink to="/auth/register" class="text-primary link-hover font-weight-medium"
           >Terms of Service
-        </router-link>
+        </RouterLink>
         and
-        <router-link to="/auth/register" class="text-primary link-hover font-weight-medium"
-          >Privacy Policy</router-link
+        <RouterLink to="/auth/register" class="text-primary link-hover font-weight-medium"
+          >Privacy Policy</RouterLink
         >
       </h6>
     </div>
-    <v-btn color="primary" block class="mt-4" variant="flat" size="large" @click="validate()"
-      >Create Account</v-btn
-    >
-  </v-form>
+
+    <VBtn color="primary" block class="mt-4" variant="flat" size="large" @click="validate()">
+      Create Account
+    </VBtn>
+  </VForm>
 </template>

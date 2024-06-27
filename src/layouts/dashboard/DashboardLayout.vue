@@ -7,26 +7,25 @@ import FooterPanel from './footer/FooterPanel.vue'
 </script>
 
 <template>
-  <v-locale-provider>
-    <v-app :class="[]">
+  <VLocaleProvider>
+    <VApp :class="[]">
       <VerticalSidebarVue />
       <VerticalHeaderVue />
 
-      <v-main class="page-wrapper">
-        <v-container>
+      <VMain class="page-wrapper">
+        <VContainer>
           <div>
-            <!-- Loader start -->
             <LoaderWrapper />
-            <!-- Loader end -->
             <RouterView />
           </div>
-        </v-container>
-        <v-container class="pt-0">
+        </VContainer>
+
+        <VContainer class="pt-0">
           <div>
             <FooterPanel />
           </div>
-        </v-container>
-      </v-main>
-    </v-app>
-  </v-locale-provider>
+        </VContainer>
+      </VMain>
+    </VApp>
+  </VLocaleProvider>
 </template>

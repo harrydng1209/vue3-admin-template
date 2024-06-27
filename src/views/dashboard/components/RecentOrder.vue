@@ -79,7 +79,7 @@ const projects = shallowRef([
 
 <template>
   <UiTitleCard title="Recent Orders" class-name="px-0 pb-0 rounded-md">
-    <v-table class="bordered-table" hover density="comfortable">
+    <VTable class="bordered-table" hover density="comfortable">
       <thead class="bg-containerBg">
         <tr>
           <th class="text-left text-caption font-weight-bold text-uppercase">Tracking no.</th>
@@ -97,34 +97,34 @@ const projects = shallowRef([
       <tbody>
         <tr v-for="item in projects" :key="item.name">
           <td class="py-3">
-            <router-link to="/dashboard/default" class="text-secondary link-hover">{{
+            <RouterLink to="/dashboard/default" class="text-secondary link-hover">{{
               item.number
-            }}</router-link>
+            }}</RouterLink>
           </td>
           <td class="py-3">{{ item.name }}</td>
           <td class="py-3 text-right" style="min-width: 100px">{{ item.order }}</td>
           <td class="py-3">
-            <v-chip variant="text" size="small" class="px-0" v-if="item.priority === 'rejected'">
-              <v-avatar size="8" color="error" variant="flat" class="mr-2"></v-avatar>
+            <VChip variant="text" size="small" class="px-0" v-if="item.priority === 'rejected'">
+              <VAvatar size="8" color="error" variant="flat" class="mr-2"></VAvatar>
               <p class="text-h6 mb-0">Rejected</p>
-            </v-chip>
-            <v-chip
+            </VChip>
+            <VChip
               variant="text"
               size="small"
               class="px-0"
               v-else-if="item.priority === 'approved'"
             >
-              <v-avatar size="8" color="success" variant="flat" class="mr-2"></v-avatar>
+              <VAvatar size="8" color="success" variant="flat" class="mr-2"></VAvatar>
               <p class="text-h6 mb-0">Approved</p>
-            </v-chip>
-            <v-chip variant="text" size="small" class="px-0" v-else>
-              <v-avatar size="8" color="warning" variant="flat" class="mr-2"></v-avatar>
+            </VChip>
+            <VChip variant="text" size="small" class="px-0" v-else>
+              <VAvatar size="8" color="warning" variant="flat" class="mr-2"></VAvatar>
               <p class="text-h6 mb-0">Pending</p>
-            </v-chip>
+            </VChip>
           </td>
           <td class="py-3 text-right" style="min-width: 100px">{{ item.amount }}</td>
         </tr>
       </tbody>
-    </v-table>
+    </VTable>
   </UiTitleCard>
 </template>

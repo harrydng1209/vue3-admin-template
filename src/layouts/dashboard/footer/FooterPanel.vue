@@ -14,12 +14,12 @@ const footerLink = shallowRef([
 ])
 </script>
 <template>
-  <v-footer class="px-0 footer">
-    <v-row justify="center" no-gutters>
-      <v-col cols="6">
+  <VFooter class="px-0 footer">
+    <VRow justify="center" no-gutters>
+      <VCol cols="6">
         <p class="text-caption mb-0">© All rights reserved</p>
-      </v-col>
-      <v-col class="text-right" cols="6">
+      </VCol>
+      <VCol class="text-right" cols="6">
         <a
           v-for="(item, i) in footerLink"
           :key="i"
@@ -28,7 +28,7 @@ const footerLink = shallowRef([
         >
           {{ item.title }}
         </a>
-      </v-col>
-    </v-row>
-  </v-footer>
+      </VCol>
+    </VRow>
+  </VFooter>
 </template>

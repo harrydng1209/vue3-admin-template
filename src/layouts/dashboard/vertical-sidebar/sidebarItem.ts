@@ -1,4 +1,3 @@
-// icons
 import {
   QuestionOutlined,
   DashboardOutlined,

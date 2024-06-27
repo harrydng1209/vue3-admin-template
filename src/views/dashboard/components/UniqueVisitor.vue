@@ -95,7 +95,6 @@ const chartOptions2 = computed(() => {
   }
 })
 
-// chart 1
 const areaChart1 = {
   series: [
     {
@@ -126,31 +125,31 @@ const tab = ref(1)
 </script>
 
 <template>
-  <v-card class="title-card" variant="text">
-    <v-card-item class="pb-2 px-0 pt-0">
+  <VCard class="title-card" variant="text">
+    <VCardItem class="pb-2 px-0 pt-0">
       <div class="d-flex justify-space-between">
-        <v-card-title class="text-h5">Unique Visitor</v-card-title>
+        <VCardTitle class="text-h5">Unique Visitor</VCardTitle>
         <div class="d-flex flex-wrap">
-          <v-tabs v-model="tab" color="primary" class="tabBtn" density="compact" hide-slider>
-            <v-tab value="one" class="mr-1" variant="outlined" rounded="md"> Month </v-tab>
-            <v-tab value="two" variant="outlined" rounded="md"> Week </v-tab>
-          </v-tabs>
+          <VTabs v-model="tab" color="primary" class="tabBtn" density="compact" hide-slider>
+            <VTab value="one" class="mr-1" variant="outlined" rounded="md"> Month </VTab>
+            <VTab value="two" variant="outlined" rounded="md"> Week </VTab>
+          </VTabs>
         </div>
       </div>
-    </v-card-item>
-    <v-card-text class="rounded-md overflow-hidden">
-      <v-window v-model="tab">
-        <v-window-item value="one">
-          <apexchart type="area" height="450" :options="chartOptions2" :series="areaChart2.series">
-          </apexchart>
-        </v-window-item>
+    </VCardItem>
+    <VCardText class="rounded-md overflow-hidden">
+      <VWindow v-model="tab">
+        <VWindowItem value="one">
+          <Apexchart type="area" height="450" :options="chartOptions2" :series="areaChart2.series">
+          </Apexchart>
+        </VWindowItem>
 
-        <v-window-item value="two">
-          <apexchart type="area" height="450" :options="chartOptions1" :series="areaChart1.series">
-          </apexchart>
-        </v-window-item>
-      </v-window>
-    </v-card-text>
-  </v-card>
+        <VWindowItem value="two">
+          <Apexchart type="area" height="450" :options="chartOptions1" :series="areaChart1.series">
+          </Apexchart>
+        </VWindowItem>
+      </VWindow>
+    </VCardText>
+  </VCard>
 </template>
 450

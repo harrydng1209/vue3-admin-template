@@ -148,7 +148,6 @@ const chartOptions1 = computed(() => {
   }
 })
 
-// chart 1
 const barChart1 = {
   series: [
     {
@@ -166,12 +165,12 @@ const items = ref(['Today', 'This month', 'This year'])
 </script>
 
 <template>
-  <v-card class="title-card" variant="text" rounded="md">
-    <v-card-item class="pb-2 px-0 pt-0">
+  <VCard class="title-card" variant="text" rounded="md">
+    <VCardItem class="pb-2 px-0 pt-0">
       <div class="d-flex justify-space-between">
-        <v-card-title class="text-h5">Sales Report</v-card-title>
+        <VCardTitle class="text-h5">Sales Report</VCardTitle>
         <div style="min-width: 160px">
-          <v-autocomplete
+          <VAutocomplete
             id="autocomplete-input"
             model-value="Today"
             :items="items"
@@ -179,25 +178,25 @@ const items = ref(['Today', 'This month', 'This year'])
             variant="outlined"
             hide-details
             density="compact"
-          ></v-autocomplete>
+          ></VAutocomplete>
         </div>
       </div>
-    </v-card-item>
-    <v-card-text variant="outlined" class="rounded-md">
+    </VCardItem>
+    <VCardText variant="outlined" class="rounded-md">
       <div class="pt-5">
         <h6 class="text-h6 text-lightText mb-3">Net Profit</h6>
         <h4 class="text-h4 mb-0">$1560</h4>
       </div>
-      <apexchart
+      <Apexchart
         type="bar"
         height="360"
         class="salesReport"
         :options="chartOptions1"
         :series="barChart1.series"
       >
-      </apexchart>
-    </v-card-text>
-  </v-card>
+      </Apexchart>
+    </VCardText>
+  </VCard>
 </template>
 <style lang="scss">
 .salesReport {

@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <v-row no-gutters class="bg-containerBg" style="min-height: 100vh">
-    <v-col class="d-flex align-center justify-center">
+  <VRow no-gutters class="bg-containerBg" style="min-height: 100vh">
+    <VCol class="d-flex align-center justify-center">
       <div class="text-center">
         <div class="constructionWrapper">
           <img src="@/assets/images/maintenance/under-construction.svg" alt="under construction" />
@@ -11,10 +11,10 @@
         <p class="text-h6 text-lightText constructionContent">
           Hey! Please check out this site later. We are doing some maintenance on it right now.
         </p>
-        <v-btn variant="flat" color="primary" to="/dashboard/analytics">Back To Home</v-btn>
+        <VBtn variant="flat" color="primary" to="/dashboard/analytics">Back To Home</VBtn>
       </div>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>
 <style lang="scss">
 .constructionWrapper {

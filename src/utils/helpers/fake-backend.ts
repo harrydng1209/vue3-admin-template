@@ -4,34 +4,31 @@ function fakeBackend() {
   const users = [
     {
       id: 1,
-      username: 'info@codedthemes.com',
-      password: 'admin123',
-      firstName: 'Codedthemes',
-      lastName: '.com'
+      username: 'admin',
+      password: 'admin',
+      firstName: 'Harry',
+      lastName: 'Nguyen'
     }
   ]
   const realFetch = window.fetch
-  /* eslint-disable @typescript-eslint/no-explicit-any */
   window.fetch = function (url: any, opts: any) {
     return new Promise((resolve: any, reject) => {
-      // wrap in timeout to simulate server api call
       setTimeout(handleRoute, 500)
 
       function handleRoute() {
         switch (true) {
           case url.endsWith('/users/authenticate') && opts.method === 'POST':
             return authenticate()
+
           case url.endsWith('/users') && opts.method === 'GET':
             return getUsers()
+
           default:
-            // pass through any requests not handled above
             return realFetch(url, opts)
               .then((response) => resolve(response))
               .catch((error) => reject(error))
         }
       }
-
-      // route functions
 
       function authenticate() {
         const { username, password } = body()
@@ -52,8 +49,6 @@ function fakeBackend() {
         if (!isAuthenticated()) return unauthorized()
         return ok(users)
       }
-
-      // helper functions
 
       function ok(body: any) {
         resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(body)) })

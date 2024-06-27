@@ -56,7 +56,6 @@ const chartOptions1 = computed(() => {
   }
 })
 
-// chart 1
 const barChart1 = {
   series: [
     {
@@ -73,7 +72,7 @@ const barChart1 = {
       <h6 class="text-h6 text-lightText mb-4">This Week Statistics</h6>
       <h3 class="text-h3 mb-0">$7,650</h3>
     </div>
-    <apexchart type="bar" height="365" :options="chartOptions1" :series="barChart1.series">
-    </apexchart>
+    <Apexchart type="bar" height="365" :options="chartOptions1" :series="barChart1.series">
+    </Apexchart>
   </UiTitleCard>
 </template>

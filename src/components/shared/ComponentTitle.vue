@@ -9,13 +9,12 @@ const props = defineProps({
 })
 </script>
 
-// ===============================|| Component title ||=============================== //
 <template>
-  <v-row class="mb-0 mt-n3">
-    <v-col cols="12" md="12">
-      <v-card elevation="0" variant="text">
-        <v-row no-gutters class="align-center">
-          <v-col sm="12">
+  <VRow class="mb-0 mt-n3">
+    <VCol cols="12" md="12">
+      <VCard elevation="0" variant="text">
+        <VRow no-gutters class="align-center">
+          <VCol sm="12">
             <h2 class="text-h2 mb-2">{{ props.title }}</h2>
             <h6 class="text-h6 text-lightText mb-5">{{ props.subContent }}</h6>
             <div class="d-flex align-center mb-2 text-caption text-lightText">
@@ -30,9 +29,9 @@ const props = defineProps({
               <GlobalOutlined class="mr-2" />
               <span>{{ props.link }}</span>
             </a>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-col>
-  </v-row>
+          </VCol>
+        </VRow>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>

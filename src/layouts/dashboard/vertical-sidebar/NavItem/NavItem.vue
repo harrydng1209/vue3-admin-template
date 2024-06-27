@@ -3,8 +3,7 @@ const props = defineProps({ item: Object, level: Number })
 </script>
 
 <template>
-  <!---Single Item-->
-  <v-list-item
+  <VListItem
     :to="item.type === 'external' ? '' : item.to"
     :href="item.type === 'external' ? item.to : ''"
     rounded
@@ -13,18 +12,17 @@ const props = defineProps({ item: Object, level: Number })
     :disabled="item.disabled"
     :target="item.type === 'external' ? '_blank' : ''"
   >
-    <!---If icon-->
     <template v-slot:prepend>
       <component :is="props.item.icon" class="iconClass" :level="props.level"></component>
     </template>
-    <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
-    <!---If Caption-->
-    <v-list-item-subtitle v-if="item.subCaption" class="text-caption mt-n1 hide-menu">
+    <VListItemTitle>{{ $t(item.title) }}</VListItemTitle>
+
+    <VListItemSubtitle v-if="item.subCaption" class="text-caption mt-n1 hide-menu">
       {{ item.subCaption }}
-    </v-list-item-subtitle>
-    <!---If any chip or label-->
+    </VListItemSubtitle>
+
     <template v-slot:append v-if="item.chip">
-      <v-chip
+      <VChip
         label
         :color="item.chipColor"
         class="sidebarchip hide-menu"
@@ -33,7 +31,7 @@ const props = defineProps({ item: Object, level: Number })
         :prepend-icon="item.chipIcon"
       >
         {{ item.chip }}
-      </v-chip>
+      </VChip>
     </template>
-  </v-list-item>
+  </VListItem>
 </template>

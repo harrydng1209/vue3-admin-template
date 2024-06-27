@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import BaseBreadcrumb from '@/components/shared/BaseBreadcrumb.vue'
 import UiParentCard from '@/components/shared/UiParentCard.vue'
 
-// component content
 const page = ref({ title: 'Color' })
 const breadcrumbs = ref([
   {
@@ -33,22 +32,22 @@ const colors = ref([
 
 <template>
   <BaseBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></BaseBreadcrumb>
-  <v-row>
-    <v-col cols="12" md="12">
+  <VRow>
+    <VCol cols="12" md="12">
       <UiParentCard title="Color Palette">
-        <v-row>
-          <v-col md="3" cols="12" v-for="(color, index) in colors" :key="index">
-            <v-sheet
+        <VRow>
+          <VCol md="3" cols="12" v-for="(color, index) in colors" :key="index">
+            <VSheet
               rounded="md"
               class="align-center justify-center d-flex"
               height="100"
               width="100%"
               :color="color"
               >class: {{ color }}
-            </v-sheet>
-          </v-col>
-        </v-row>
+            </VSheet>
+          </VCol>
+        </VRow>
       </UiParentCard>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

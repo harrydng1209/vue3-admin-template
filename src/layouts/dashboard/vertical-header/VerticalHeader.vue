@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { useCustomizerStore } from '../../../stores/customizer'
-// icons
 import { MenuFoldOutlined, SearchOutlined, GithubOutlined } from '@ant-design/icons-vue'
-
-// dropdown imports
 import NotificationDD from './NotificationDD.vue'
 import Searchbar from './SearchBarPanel.vue'
 import ProfileDD from './ProfileDD.vue'
@@ -12,8 +9,8 @@ const customizer = useCustomizerStore()
 </script>
 
 <template>
-  <v-app-bar elevation="0" height="60">
-    <v-btn
+  <VAppBar elevation="0" height="60">
+    <VBtn
       class="hidden-md-and-down text-secondary mr-3"
       color="darkText"
       icon
@@ -23,8 +20,8 @@ const customizer = useCustomizerStore()
       size="small"
     >
       <MenuFoldOutlined :style="{ fontSize: '16px' }" />
-    </v-btn>
-    <v-btn
+    </VBtn>
+    <VBtn
       class="hidden-lg-and-up text-secondary ms-3"
       color="darkText"
       icon
@@ -34,12 +31,11 @@ const customizer = useCustomizerStore()
       size="small"
     >
       <MenuFoldOutlined :style="{ fontSize: '16px' }" />
-    </v-btn>
+    </VBtn>
 
-    <!-- search mobile -->
-    <v-menu :close-on-content-click="false" class="hidden-lg-and-up" offset="10, 0">
+    <VMenu :close-on-content-click="false" class="hidden-lg-and-up" offset="10, 0">
       <template v-slot:activator="{ props }">
-        <v-btn
+        <VBtn
           class="hidden-lg-and-up text-secondary ml-1"
           color="lightsecondary"
           icon
@@ -49,10 +45,10 @@ const customizer = useCustomizerStore()
           v-bind="props"
         >
           <SearchOutlined :style="{ fontSize: '17px' }" />
-        </v-btn>
+        </VBtn>
       </template>
-      <v-sheet class="search-sheet v-col-12 pa-0" width="320">
-        <v-text-field
+      <VSheet class="search-sheet v-col-12 pa-0" width="320">
+        <VTextField
           persistent-placeholder
           placeholder="Search here.."
           color="primary"
@@ -62,28 +58,17 @@ const customizer = useCustomizerStore()
           <template v-slot:prepend-inner>
             <SearchOutlined :style="{ fontSize: '17px' }" />
           </template>
-        </v-text-field>
-      </v-sheet>
-    </v-menu>
+        </VTextField>
+      </VSheet>
+    </VMenu>
 
-    <!-- ---------------------------------------------- -->
-    <!-- Search part -->
-    <!-- ---------------------------------------------- -->
-    <v-sheet class="d-none d-lg-block" width="250">
+    <VSheet class="d-none d-lg-block" width="250">
       <Searchbar />
-    </v-sheet>
+    </VSheet>
 
-    <!---/Search part -->
+    <VSpacer />
 
-    <v-spacer />
-    <!-- ---------------------------------------------- -->
-    <!---right part -->
-    <!-- ---------------------------------------------- -->
-
-    <!-- ---------------------------------------------- -->
-    <!-- Github -->
-    <!-- ---------------------------------------------- -->
-    <v-btn
+    <VBtn
       icon
       class="text-secondary hidden-sm-and-down d-flex"
       color="darkText"
@@ -93,30 +78,24 @@ const customizer = useCustomizerStore()
       target="_blank"
     >
       <GithubOutlined :style="{ fontSize: '16px' }" />
-    </v-btn>
+    </VBtn>
 
-    <!-- ---------------------------------------------- -->
-    <!-- Notification -->
-    <!-- ---------------------------------------------- -->
     <NotificationDD />
 
-    <!-- ---------------------------------------------- -->
-    <!-- User Profile -->
-    <!-- ---------------------------------------------- -->
-    <v-menu :close-on-content-click="false" offset="8, 0">
+    <VMenu :close-on-content-click="false" offset="8, 0">
       <template v-slot:activator="{ props }">
-        <v-btn class="profileBtn" variant="text" rounded="sm" v-bind="props">
+        <VBtn class="profileBtn" variant="text" rounded="sm" v-bind="props">
           <div class="d-flex align-center">
-            <v-avatar class="mr-sm-2 mr-0 py-2">
+            <VAvatar class="mr-sm-2 mr-0 py-2">
               <img src="@/assets/images/users/avatar-1.png" alt="Julia" />
-            </v-avatar>
+            </VAvatar>
             <h6 class="text-subtitle-1 mb-0 d-sm-block d-none">JWT User</h6>
           </div>
-        </v-btn>
+        </VBtn>
       </template>
-      <v-sheet rounded="md" width="290">
+      <VSheet rounded="md" width="290">
         <ProfileDD />
-      </v-sheet>
-    </v-menu>
-  </v-app-bar>
+      </VSheet>
+    </VMenu>
+  </VAppBar>
 </template>

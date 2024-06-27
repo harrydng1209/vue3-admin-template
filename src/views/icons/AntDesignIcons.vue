@@ -18,11 +18,11 @@ const breadcrumbs = ref([
 
 <template>
   <BaseBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></BaseBreadcrumb>
-  <v-row>
-    <v-col cols="12" md="12">
+  <VRow>
+    <VCol cols="12" md="12">
       <UiParentCard title="Ant design Icons">
         <div v-html="icons"></div>
       </UiParentCard>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>
